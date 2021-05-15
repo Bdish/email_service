@@ -1,11 +1,7 @@
 FROM python:3.7
-
 ENV PYTHONUNBUFFERED 1
-
-ADD ./ /app
-
 WORKDIR /app
-
+COPY requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
 CMD python manage.py runserver 0.0.0.0:8000
